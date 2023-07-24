@@ -1,0 +1,75 @@
+Créer une base de donnee car_location
+Mettre dessus
+
+Créer une table user
+    id entier non signé clé primaire auto increment
+    email chaine de caractere 255 unique
+    mdp chaine de caractere 255
+    username chaine de caractere 255
+    admin booleen
+
+//Afficher la structrure de sa table
+
+Créer une table car
+    id entier non signé clé primaire auto increment
+    name chaine de caractere 255
+    description text
+    image chaine de caractere 255
+    price float
+
+
+Créer une table contact
+    id entier non signé clé primaire auto increment
+    email chaine de caractere 255
+    content text
+    date DATETIME
+
+
+Créer une table reservation
+    id entier non signé clé primaire auto increment
+    date_start DATE
+    date_end DATE
+    total_price float
+    id_user entier non signé clé secondaire id (user)
+    id_car entier non signé clé secondaire id (car)
+
+    ------------------------------------------------------------------------------------
+
+
+    create table user (
+        id int unsigned primary key auto_increment,
+        email varchar(255) not null unique,
+        mdp varchar(255),
+        username varchar(255),
+        admin boolean
+    );
+
+    create table car(
+        id int unsigned primary key auto_increment,
+        name varchar(255),
+        description text,
+        image varchar(255),
+        price float
+    );
+
+    alter table car modify price decimal(8, 2);
+
+    create table contact (
+        id int unsigned primary key auto_increment,
+        email VARCHAR(255),
+        content TEXT,
+        date DATETIME
+    );
+
+    create table reservation(
+        id int unsigned primary key auto_increment,
+        date_start date,
+        date_end date,
+        total_price float,
+        id_user int unsigned,
+        id_car int unsigned,
+        constraint fk_id_user foreign key (id_user) references user (id)
+    );
+
+    alter table reservation modify total_price decimal(8,2);
+    alter table reservation add constraint fk_id_car foreign key (id_car) references car (id);
