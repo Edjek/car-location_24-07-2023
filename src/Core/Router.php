@@ -4,9 +4,12 @@ namespace App\Core;
 
 use \App\Controller\Front\HomeController;
 use \App\Controller\Front\ContactController;
+use \App\Controller\Front\CarController;
 
 require_once '../src/Controller/Front/ContactController.php';
 require_once '../src/Controller/Front/HomeController.php';
+require_once '../src/Controller/Front/CarController.php';
+
 
 class Router
 {
@@ -28,6 +31,10 @@ class Router
         $this->add_route('/contact/form', function () {
             $this->currentController = new ContactController();
             $this->currentController->saveForm();
+        });
+        $this->add_route('/car/{frfhjg}', function($variable){
+            $this->currentController = new CarController();
+            $this->currentController->index($variable);
         });
 
         // Ajouter une route /car/{id}, function creera une objet de type CarController et il appellera la method index() {require_once templates->front>car.php H1 Bienvenue dans la page des voitures}
