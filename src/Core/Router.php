@@ -32,7 +32,7 @@ class Router
             $this->currentController = new ContactController();
             $this->currentController->saveForm();
         });
-        $this->add_route('/car/{test}', function($params){
+        $this->add_route('/car/{test}', function ($params) {
             $this->currentController = new CarController();
             $this->currentController->index($params);
         });
