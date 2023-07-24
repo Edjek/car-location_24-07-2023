@@ -6,6 +6,6 @@ class HomeController
 {
     public function index()
     {
-        echo 'accueil';
+        require_once '../templates/front/home.php';
     }
 }

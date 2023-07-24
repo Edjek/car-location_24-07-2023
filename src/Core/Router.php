@@ -29,6 +29,8 @@ class Router
             $this->currentController = new ContactController();
             $this->currentController->saveForm();
         });
+
+        // Ajouter une route /car/{id}, function creera une objet de type CarController et il appellera la method index() {require_once templates->front>car.php H1 Bienvenue dans la page des voitures}
     }
 
     private function add_route(string $route, callable $closure)
