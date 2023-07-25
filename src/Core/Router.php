@@ -19,13 +19,13 @@ class Router
             $this->currentController->index(); // Appelle la méthode index du controleur d'accueil
         });
         // Route pour la page contact avec un parametre id
-        $this->add_route('/contact/{id}', function ($params) { // On peut passer les eventuels paramètres à la fonction
+        $this->add_route('/contact/test/{id}', function ($params) { // On peut passer les eventuels paramètres à la fonction
             $this->currentController = new ContactController();
             $this->currentController->index($params);
         });
-        $this->add_route('/contact/form', function () {
+        $this->add_route('/contact/form/{id}', function ($param) {
             $this->currentController = new ContactController();
-            $this->currentController->saveForm();
+            $this->currentController->saveForm($param);
         });
         $this->add_route('/car/{test}', function ($params) {
             $this->currentController = new CarController();

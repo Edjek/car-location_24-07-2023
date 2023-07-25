@@ -11,7 +11,6 @@ class HomeController extends AbstractController
     {
         $car = new Car();
         $cars = $car->getCars($this->pdo);
-        var_dump($cars);
         require_once '../templates/front/home.php';
     }
 }
