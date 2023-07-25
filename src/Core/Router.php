@@ -59,8 +59,3 @@ class Router
         require_once '../templates/error-404.php';
     }
 }
-
-// Creer une class Autoloader
-    // namespace
-
-    // fonction publique et statique register
