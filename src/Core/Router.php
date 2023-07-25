@@ -31,8 +31,6 @@ class Router
             $this->currentController = new CarController();
             $this->currentController->index($params);
         });
-
-        // Ajouter une route /car/{id}, function creera une objet de type CarController et il appellera la method index() {require_once templates->front>car.php H1 Bienvenue dans la page des voitures}
     }
 
     private function add_route(string $route, callable $closure)
