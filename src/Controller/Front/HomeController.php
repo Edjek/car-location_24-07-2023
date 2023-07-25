@@ -2,14 +2,16 @@
 
 namespace App\Controller\Front;
 
-use \App\Model\Car;
+use App\Controller\AbstractController;
+use App\Model\Car;
 
-class HomeController
+class HomeController extends AbstractController
 {
     public function index()
     {
-        $cars = new Car();
-        $cars->getCars();
+        $car = new Car();
+        $cars = $car->getCars($this->pdo);
+        var_dump($cars);
         require_once '../templates/front/home.php';
     }
 }

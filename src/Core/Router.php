@@ -2,9 +2,9 @@
 
 namespace App\Core;
 
-use \App\Controller\Front\HomeController;
-use \App\Controller\Front\ContactController;
-use \App\Controller\Front\CarController;
+use App\Controller\Front\HomeController;
+use App\Controller\Front\ContactController;
+use App\Controller\Front\CarController;
 
 class Router
 {

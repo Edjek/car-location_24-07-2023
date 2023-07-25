@@ -2,7 +2,9 @@
 
 namespace App\Controller\Front;
 
-class CarController
+use App\Controller\AbstractController;
+
+class CarController extends AbstractController
 {
     public function index($params)
     {
