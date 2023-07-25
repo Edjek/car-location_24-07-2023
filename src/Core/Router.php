@@ -6,11 +6,6 @@ use \App\Controller\Front\HomeController;
 use \App\Controller\Front\ContactController;
 use \App\Controller\Front\CarController;
 
-require_once '../src/Controller/Front/ContactController.php';
-require_once '../src/Controller/Front/HomeController.php';
-require_once '../src/Controller/Front/CarController.php';
-
-
 class Router
 {
     private array $routes; // Tableau associatif pour stocker les routes et les fonction associés
@@ -49,7 +44,7 @@ class Router
         $this->routes[$pattern] = $closure; // Stock la regex de la route et la fonction associée dans le tableau des routes
     }
 
-    public  function execute()
+    public function execute()
     {
         $requestUri = $_SERVER['REQUEST_URI']; // Récupère l'URL de la requete
         $finalPath = str_replace('/car-location', '', $requestUri); // Supprime le dossier racine pour obtenir le chemin final
@@ -64,3 +59,8 @@ class Router
         require_once '../templates/error-404.php';
     }
 }
+
+// Creer une class Autoloader
+    // namespace
+
+    // fonction publique et statique register
