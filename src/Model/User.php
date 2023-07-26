@@ -13,7 +13,6 @@ class User extends AbstractModel
             ':username' => $pseudo,
             ':email' => $email,
             ':pswd' => $pswd,
-
         ]);
     }
 }
