@@ -6,6 +6,7 @@ use App\Controller\Front\HomeController;
 use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
 use App\Controller\Front\ReservationController;
+use App\Controller\Front\UserController;
 
 class Router
 {
@@ -36,13 +37,23 @@ class Router
             $this->currentController = new ReservationController();
             $this->currentController->index($params);
         });
-        
+        $this->add_route('/inscription', function () {
+            $this->currentController = new UserController();
+            $this->currentController->index();
+        });
+        $this->add_route('/save-user', function () {
+            $this->currentController = new UserController();
+            $this->currentController->saveUser();
+        });
+        // Creer une class User qui hérite de AbstractModel dans le dossier Model
+        // qui contient une methode saveUser($pseudo, $mdp, $email) => 
+
         // Creer une route /reservation/{id} = > creer un objet de ReservationController et vous appelr la method index de ce Controller
 
         // Creer le ReservationController et la method index 
-            // creer un objet de type Car
-            // appeler la methode getCarById($id) SELECT * FROM car WHERE id = $id
-            // require_once reservation.php
+        // creer un objet de type Car
+        // appeler la methode getCarById($id) SELECT * FROM car WHERE id = $id
+        // require_once reservation.php
 
     }
 

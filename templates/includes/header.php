@@ -19,7 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/car-location/">Accueil</a>
                         </li>
@@ -27,7 +27,7 @@
                             <a class="nav-link" href="/car-location/contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Inscription</a>
+                            <a class="nav-link" href="/car-location/inscription">Inscription</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Connexion</a>
@@ -39,3 +39,8 @@
     </header>
 
     <main>
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
