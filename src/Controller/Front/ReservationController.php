@@ -12,7 +12,6 @@ class ReservationController extends AbstractController
         $car = new Car();
         $id = $params['id'];
         $carById = $car->getCarById($id);
-        var_dump($carById);
         require_once '../templates/front/reservation.php';
     }
 }

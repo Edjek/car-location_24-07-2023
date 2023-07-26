@@ -24,9 +24,9 @@ class Router
             $this->currentController = new ContactController();
             $this->currentController->index($params);
         });
-        $this->add_route('/contact', function ($param) {
+        $this->add_route('/contact', function () {
             $this->currentController = new ContactController();
-            $this->currentController->saveForm($param);
+            $this->currentController->saveForm();
         });
         $this->add_route('/car', function ($params) {
             $this->currentController = new CarController();

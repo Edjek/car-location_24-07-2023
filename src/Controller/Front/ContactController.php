@@ -11,8 +11,7 @@ class ContactController extends AbstractController
         // echo $params['test'];
     }
 
-    public function saveForm($param)
+    public function saveForm()
     {
-        echo $param['id'];
     }
 }
