@@ -5,6 +5,7 @@ namespace App\Core;
 use App\Controller\Front\HomeController;
 use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
+use App\Controller\Front\ReservationController;
 
 class Router
 {
@@ -31,6 +32,18 @@ class Router
             $this->currentController = new CarController();
             $this->currentController->index($params);
         });
+        $this->add_route('/reservation/{id}', function ($params) {
+            $this->currentController = new ReservationController();
+            $this->currentController->index($params);
+        });
+        
+        // Creer une route /reservation/{id} = > creer un objet de ReservationController et vous appelr la method index de ce Controller
+
+        // Creer le ReservationController et la method index 
+            // creer un objet de type Car
+            // appeler la methode getCarById($id) SELECT * FROM car WHERE id = $id
+            // require_once reservation.php
+
     }
 
     private function add_route(string $route, callable $closure)

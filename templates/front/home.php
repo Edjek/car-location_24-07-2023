@@ -16,7 +16,7 @@
             <h1><?= $car['name']; ?></h1>
             <p><?= $car['description']; ?></p>
             <img src="/car-location/public/img/<?= $car['image']; ?>" alt="">
-            <a href="/car-location/contact/form/<?= $car['id']; ?>">reserver</a>
+            <a href="/car-location/reservation/<?= $car['id']; ?>">reserver</a>
         <?php
         }
         ?>

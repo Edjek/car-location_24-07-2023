@@ -2,7 +2,7 @@ Créer une base de donnee car_location
 Se positionner dessus
 
 Créer une table user
-    id entier non signé clé primaire auto increment
+    id entier non signé clé primaire auto incrementé
     email chaîne de caractère 255 unique
     mdp chaîne de caractère 255
     username chaîne de caractère 255
@@ -11,7 +11,7 @@ Créer une table user
 // Afficher la structrure de sa table
 
 Créer une table car
-    id entier non signé clé primaire auto increment
+    id entier non signé clé primaire auto incrementé
     name chaîne de caractère 255
     description text
     image chaîne de caractère 255
@@ -19,19 +19,20 @@ Créer une table car
 
 
 Créer une table contact
-    id entier non signé clé primaire auto increment
+    id entier non signé clé primaire auto incrementé
     email chaîne de caractère 255
     content text
-    date DATETIME
+    date datetime
 
 
 Créer une table reservation
-    id entier non signé clé primaire auto increment
-    date_start DATE
-    date_end DATE
+    id entier non signé clé primaire auto incrementé
+    date_start date
+    date_end date
     total_price float
-    id_user entier non signé clé secondaire id (user)
-    id_car entier non signé clé secondaire id (car)
+    id_user entier non signé clé secondaire user (id)
+    id_car entier non signé clé secondaire car (id)
+
 
     ------------------------------------------------------------------------------------
 

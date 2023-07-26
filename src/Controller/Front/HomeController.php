@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $car = new Car();
-        $cars = $car->getCars($this->pdo);
+        $cars = $car->getCars();
         require_once '../templates/front/home.php';
     }
 }
