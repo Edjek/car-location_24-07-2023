@@ -45,16 +45,6 @@ class Router
             $this->currentController = new UserController();
             $this->currentController->saveUser();
         });
-        // Creer une class User qui hérite de AbstractModel dans le dossier Model
-        // qui contient une methode saveUser($pseudo, $mdp, $email) => 
-
-        // Creer une route /reservation/{id} = > creer un objet de ReservationController et vous appelr la method index de ce Controller
-
-        // Creer le ReservationController et la method index 
-        // creer un objet de type Car
-        // appeler la methode getCarById($id) SELECT * FROM car WHERE id = $id
-        // require_once reservation.php
-
     }
 
     private function add_route(string $route, callable $closure)

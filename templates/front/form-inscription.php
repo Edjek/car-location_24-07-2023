@@ -3,7 +3,6 @@ require_once '../templates/includes/header.php';
 ?>
 <section class="container py-3">
     <h1>Inscrivez-vous</h1>
-    <!-- creer la route UserController, saveUser() var_dump($_Post) -->
     <form action="/car-location/save-user" method="post" class="w-75 m-auto">
 
         <div class="mb-3">
