@@ -23,32 +23,36 @@ class UserController extends AbstractController
             $pswd = trim($_POST['pswd']); // Crypter le mot de passe
 
             if (empty($pseudo)) {
-                Session::setFlashMessage('Le champs pseudo est vide !');
+                Session::setFlashMessage('Le champs pseudo est vide !', 'warning');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
             }
 
             if (empty($email)) {
-                Session::setFlashMessage('Le champs email est vide !');
+                Session::setFlashMessage('Le champs email est vide !', 'warning');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
             }
 
             if (empty($pswd)) {
-                Session::setFlashMessage('Le champs mot de passe est vide !');
+                Session::setFlashMessage('Le champs mot de passe est vide !', 'warning');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
             }
 
             $user = new User();
             if($user->isEmailExist($email)){
-                Session::setFlashMessage('Cet email est déjà utilisé !');
+                Session::setFlashMessage('Cet email est déjà utilisé !', 'danger');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
             }
 
             $pswd = password_hash($pswd, PASSWORD_DEFAULT);
             $user->saveUser($pseudo, $email, $pswd);
+            Session::setFlashMessage('Vous êtes bien inscrit !', 'success');
+            header('Location: /car-location/');
+            exit();
+
         }
     }
 }
