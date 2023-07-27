@@ -55,16 +55,14 @@ class Router
             $this->currentController = new UserController();
             $this->currentController->connect();
         });
-        $this->add_route('/backoffice', function(){
+        $this->add_route('/backoffice', function () {
             $this->currentController = new AdminController();
             $this->currentController->index();
         });
-        $this->add_route('/backoffice/cars', function(){
+        $this->add_route('/backoffice/cars', function () {
             $this->currentController = new AdminCarController();
             $this->currentController->index();
         });
-        // Creer une Route /backoffice = > AdminController
-            // function index() => affichera la page templates/admin/admin.php
     }
 
     private function add_route(string $route, callable $closure)
