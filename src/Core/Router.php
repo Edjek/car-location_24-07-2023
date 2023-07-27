@@ -22,11 +22,6 @@ class Router
             $this->currentController = new HomeController(); // Créé une instance du contrôleur d'accueil
             $this->currentController->index(); // Appelle la méthode index du contrôleur d'accueil
         });
-        // Route pour la page contact avec un paramètre id
-        $this->add_route('/contact/test/{id}', function ($params) { // On peut passer les éventuels paramètres à la fonction
-            $this->currentController = new ContactController();
-            $this->currentController->index($params);
-        });
         $this->add_route('/contact', function () {
             $this->currentController = new ContactController();
             $this->currentController->saveForm();
