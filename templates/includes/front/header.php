@@ -55,6 +55,6 @@
     </header>
 
     <main>
-        <?php
+    <?php
 
-        App\Core\Session::getMessage();
+    App\Core\Session::getMessage();

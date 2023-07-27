@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+include_once '../templates/includes/front/header.php'
+?>
+<section class="container py-3">
+    <h1>Error 404</h1>
+</section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Error-404</h1>
-</body>
-
-</html>
+<?php
+include_once '../templates/includes/footer.php';

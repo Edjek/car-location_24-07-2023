@@ -22,4 +22,3 @@ require_once '../templates/includes/admin/header.php';
 </section>
 <?php
 require_once '../templates/includes/footer.php';
-?>
