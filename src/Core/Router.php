@@ -53,6 +53,8 @@ class Router
             $this->currentController = new UserController();
             $this->currentController->connect();
         });
+        // Creer une Route /backoffice = > AdminController
+            // function index() => affichera la page templates/admin/admin.php
     }
 
     private function add_route(string $route, callable $closure)

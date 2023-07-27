@@ -86,17 +86,11 @@ class UserController extends AbstractController
                 exit();
             }
 
-            if(password_verify($pswd, $user['mdp'])){
-                // Creer une method static createSession(User $user) dans la class Session
-                    // $_SESSION['LOGGED_USERNAME] = $user['username'];
-                    // $_SESSION['LOGGED_ID'] = $user['id']
-                    // if($user['admin'] === true){
-                        // $_SESSION['LOGGED_ADMIN'] = true
-                    // }
-
-
-                // Appeler la methode et lui passer des vraies valeurs aux parametre
-
+            if (password_verify($pswd, $user['mdp'])) {
+                Session::createSession($user);
+                Session::setFlashMessage('Vous êtes connecté !', 'success');
+                header('Location: /car-location/');
+                exit();
             } else {
                 Session::setFlashMessage('Votre mot de passe est erroné !', 'warning');
                 header('Location: /car-location/connexion');
