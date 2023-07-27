@@ -41,7 +41,7 @@ class UserController extends AbstractController
             }
 
             $user = new User();
-            if($user->isEmailExist($email)){
+            if ($user->getUserByEmail($email)) {
                 Session::setFlashMessage('Cet email est déjà utilisé !', 'danger');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
@@ -52,7 +52,57 @@ class UserController extends AbstractController
             Session::setFlashMessage('Vous êtes bien inscrit !', 'success');
             header('Location: /car-location/');
             exit();
+        }
+    }
 
+    public function connexion()
+    {
+        require_once '../templates/front/form-connexion.php';
+    }
+
+    public function connect()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = trim($_POST['email']);
+            $pswd = trim($_POST['pswd']);
+
+            if (empty($email)) {
+                Session::setFlashMessage('Votre champs email est vide !', 'warning');
+                header('Location: /car-location/connexion');
+                exit();
+            }
+
+            if (empty($pswd)) {
+                Session::setFlashMessage('Votre champs mot de passe est vide !', 'warning');
+                header('Location: /car-location/connexion');
+                exit();
+            }
+
+            $user = new User();
+            $user = $user->getUserByEmail($email);
+            if ($user === false) {
+                Session::setFlashMessage('Votre email n\'existe pas !', 'warning');
+                header('Location: /car-location/connexion');
+                exit();
+            }
+
+            if(password_verify($pswd, $user['mdp'])){
+                // Creer une method static createSession(User $user) dans la class Session
+                    // $_SESSION['LOGGED_USERNAME] = $user['username'];
+                    // $_SESSION['LOGGED_ID'] = $user['id']
+                    // if($user['admin'] === true){
+                        // $_SESSION['LOGGED_ADMIN'] = true
+                    // }
+
+
+                // Appeler la methode et lui passer des vraies valeurs aux parametre
+
+            } else {
+                Session::setFlashMessage('Votre mot de passe est erroné !', 'warning');
+                header('Location: /car-location/connexion');
+                exit();
+            }
+            var_dump($user);
         }
     }
 }

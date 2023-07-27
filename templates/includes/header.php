@@ -29,8 +29,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/car-location/inscription">Inscription</a>
                         </li>
+                        <!-- Creer la route -->
+                        <!--  /connexion  => UserController => connexion() -->
+
+                        <!-- Usercontroller => connexion() -->
+                        <!-- Page de formulaire de connexion -->
+                        <!-- action /car-location/connect -->
+
+                        <!-- Methode quand on appuye sur Envoyer -->
+                        <!-- Creer la route Pour traiter le formulaire -->
+                        <!-- /connect  => UserController => connect() -->
+
+                        <!-- Usercontroller => connect() -->
+
+                        <!-- User => getUserConnexion -->
+                        <!-- WHERE email =  AND mdp =  -->
+                        <!-- if -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Connexion</a>
+                            <a class="nav-link" href="/car-location/connexion">Connexion</a>
                         </li>
                     </ul>
                 </div>

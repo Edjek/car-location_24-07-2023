@@ -16,7 +16,9 @@ class User extends AbstractModel
         ]);
     }
 
-    public function isEmailExist($email)
+
+
+    public function getUserByEmail($email)
     {
         $stmt = $this->pdo->prepare('SELECT * FROM user WHERE email= :email');
         $stmt->execute([

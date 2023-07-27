@@ -45,6 +45,14 @@ class Router
             $this->currentController = new UserController();
             $this->currentController->saveUser();
         });
+        $this->add_route('/connexion', function () {
+            $this->currentController = new UserController();
+            $this->currentController->connexion();
+        });
+        $this->add_route('/connect', function () {
+            $this->currentController = new UserController();
+            $this->currentController->connect();
+        });
     }
 
     private function add_route(string $route, callable $closure)
