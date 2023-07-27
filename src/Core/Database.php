@@ -10,7 +10,7 @@ class Database
     private static $password = '';
     private static $connection;
 
-    public static function connect()
+    public static function connect(): void
     {
         // On verifie si $connection a déjà été créée, si c'est pas le cas on la créée
         // Design pattern Singleton : permet d'eviter d'appeler une ressource inutilement
@@ -28,7 +28,7 @@ class Database
         }
     }
 
-    public static function getConnection()
+    public static function getConnection(): \PDO
     {
         return self::$connection;
     }

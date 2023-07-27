@@ -7,7 +7,7 @@ use App\Model\Car;
 
 class ReservationController extends AbstractController
 {
-    public function index($params)
+    public function index(array $params): void
     {
         $car = new Car();
         $id = $params['id'];

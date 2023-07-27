@@ -2,11 +2,9 @@
 
 namespace App\Core;
 
-use App\Model\User;
-
 class Session
 {
-    public static function setFlashMessage(string $message, string $type)
+    public static function setFlashMessage(string $message, string $type): void
     {
         $_SESSION['message'] =
             '<div class="alert alert-' . $type . ' alert-dismissible fade show" role="alert">' . $message .
@@ -14,7 +12,7 @@ class Session
         </div>';
     }
 
-    public static function getMessage()
+    public static function getMessage(): void
     {
         if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
@@ -22,7 +20,7 @@ class Session
         }
     }
 
-    public static function createSession(array $user)
+    public static function createSession(array $user): void
     {
         $_SESSION['LOGGED_USERNAME'] = $user['username'];
         $_SESSION['LOGGED_ID'] = $user['id'];

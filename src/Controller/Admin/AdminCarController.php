@@ -7,7 +7,7 @@ use App\Model\Car;
 
 class AdminCarController  extends AbstractController
 {
-    public function index()
+    public function index(): void
     {
         $car = new Car();
         $cars = $car->getCars();

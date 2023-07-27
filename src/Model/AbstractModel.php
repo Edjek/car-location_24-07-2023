@@ -6,7 +6,7 @@ use App\Core\Database;
 
 abstract class AbstractModel
 {
-    protected $pdo;
+    protected \PDO $pdo;
 
     public function __construct()
     {

@@ -6,7 +6,7 @@ use App\Controller\AbstractController;
 
 class CarController extends AbstractController
 {
-    public function index($params)
+    public function index($params): void
     {
         require_once '../templates/front/car.php';
     }

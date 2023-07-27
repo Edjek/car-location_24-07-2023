@@ -8,12 +8,12 @@ use App\Model\User;
 
 class UserController extends AbstractController
 {
-    public function index()
+    public function index(): void
     {
         require_once '../templates/front/form-inscription.php';
     }
 
-    public function saveUser()
+    public function saveUser(): void
     {
         // Verifier si le formulaire a été soumis
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -55,12 +55,12 @@ class UserController extends AbstractController
         }
     }
 
-    public function connexion()
+    public function connexion(): void
     {
         require_once '../templates/front/form-connexion.php';
     }
 
-    public function connect()
+    public function connect(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = trim($_POST['email']);
@@ -96,7 +96,6 @@ class UserController extends AbstractController
                 header('Location: /car-location/connexion');
                 exit();
             }
-            var_dump($user);
         }
     }
 }

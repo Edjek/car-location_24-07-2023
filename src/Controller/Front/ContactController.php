@@ -6,9 +6,9 @@ use App\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    public function index($params)
+    public function index(): void
     {
-        // echo $params['test'];
+        // require_once '../templates/front/contact.php';
     }
 
     public function saveForm()

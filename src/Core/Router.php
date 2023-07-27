@@ -65,7 +65,7 @@ class Router
         });
     }
 
-    private function add_route(string $route, callable $closure)
+    private function add_route(string $route, callable $closure): void
     {
         // Convertit la route en une expression régulière pour une correspondance flexible en url et paramètre
         $pattern = str_replace('/', '\/', $route); // Échappe les barres obliques pour la regex
@@ -74,7 +74,7 @@ class Router
         $this->routes[$pattern] = $closure; // Stock la regex de la route et la fonction associée dans le tableau des routes
     }
 
-    public function execute()
+    public function execute(): void
     {
         $requestUri = $_SERVER['REQUEST_URI']; // Récupère l'URL de la requête
         $finalPath = str_replace('/car-location', '', $requestUri); // Supprime le dossier racine pour obtenir le chemin final

@@ -6,7 +6,7 @@ use App\Model\AbstractModel;
 
 class User extends AbstractModel
 {
-    public function saveUser($pseudo, $email, $pswd)
+    public function saveUser(string $pseudo, string $email, string $pswd): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO user (username, email, mdp) VALUES (:username, :email, :pswd)');
         $stmt->execute([
@@ -18,7 +18,7 @@ class User extends AbstractModel
 
 
 
-    public function getUserByEmail($email)
+    public function getUserByEmail(string $email): array
     {
         $stmt = $this->pdo->prepare('SELECT * FROM user WHERE email= :email');
         $stmt->execute([
