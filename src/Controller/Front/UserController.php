@@ -20,7 +20,7 @@ class UserController extends AbstractController
             // Récupérer les données du formulaire
             $pseudo = trim($_POST['pseudo']); // Nettoyer les espaces en début et en fin de la chaine de caractère
             $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-            $pswd = password_hash(trim($_POST['pswd']), PASSWORD_DEFAULT); // Crypter le mot de passe
+            $pswd = trim($_POST['pswd']); // Crypter le mot de passe
 
             if (empty($pseudo)) {
                 Session::setFlashMessage('Le champs pseudo est vide !');
@@ -41,9 +41,13 @@ class UserController extends AbstractController
             }
 
             $user = new User();
-            // Creer une method dans User isEmailExiste($email)
-                // requete
+            if($user->isEmailExist($email)){
+                Session::setFlashMessage('Cet email est déjà utilisé !');
+                header('Location:/car-location/inscription'); // Redirection vers le formulaire
+                exit();
+            }
 
+            $pswd = password_hash($pswd, PASSWORD_DEFAULT);
             $user->saveUser($pseudo, $email, $pswd);
         }
     }
