@@ -5,9 +5,8 @@ require_once '../templates/includes/admin/header.php';
     <table class="table">
         <!-- la boucle foreach du tableau $cars -->
         <?php
-        foreach($cars as $car) {
-            ?>
-        
+        foreach ($cars as $car) {
+        ?>
             <tr>
                 <td><?= $car['id']; ?></td>
                 <td><?= $car['name']; ?></td>
@@ -15,7 +14,7 @@ require_once '../templates/includes/admin/header.php';
                 <td><?= $car['price']; ?> euros</td>
                 <td><?= $car['image']; ?></td>
             </tr>
-            <?php
+        <?php
         }
         ?>
         <!--  -->
