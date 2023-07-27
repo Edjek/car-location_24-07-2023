@@ -1,5 +1,5 @@
 <?php
-require_once '../templates/includes/header.php';
+include_once '../templates/includes/header.php';
 ?>
 <section class="container py-3">
     <h1>Inscrivez-vous</h1>
@@ -22,5 +22,5 @@ require_once '../templates/includes/header.php';
     </form>
 </section>
 <?php
-require_once '../templates/includes/footer.php';
+include_once '../templates/includes/footer.php';
 ?>

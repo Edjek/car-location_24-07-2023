@@ -2,8 +2,6 @@
 
 namespace App\Core;
 
-use PDOException;
-
 class Database
 {
     private static $host = 'localhost';

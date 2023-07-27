@@ -1,5 +1,5 @@
 <?php
-require_once '../templates/includes/header.php'
+include_once '../templates/includes/header.php';
 ?>
 <section class="container py-3">
     <h1>Nos voitures</h1>
@@ -15,7 +15,7 @@ require_once '../templates/includes/header.php'
                         <?= $car['description']; ?> euros
                     </p>
                     <p>
-                        <?= $car['price']; ?>
+                        <?= $car['price']; ?> euros
                     </p>
                     <a href="/car-location/reservation/<?= $car['id']; ?>" class="btn btn-outline-success">reserver</a>
                 </div>
@@ -26,5 +26,5 @@ require_once '../templates/includes/header.php'
     </div>
 </section>
 <?php
-require_once '../templates/includes/footer.php'
+include_once '../templates/includes/footer.php';
 ?>

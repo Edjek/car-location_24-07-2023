@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Controller\AbstractController;
+use App\Core\Session;
 use App\Model\User;
 
 class UserController extends AbstractController
@@ -22,19 +23,27 @@ class UserController extends AbstractController
             $pswd = password_hash(trim($_POST['pswd']), PASSWORD_DEFAULT); // Crypter le mot de passe
 
             if (empty($pseudo)) {
-                $_SESSION['message'] = 'Le champs pseudo est vide !'; // Création d'un message d'erreur sauvegardé en Session
+                Session::setFlashMessage('Le champs pseudo est vide !');
                 header('Location:/car-location/inscription'); // Redirection vers le formulaire
                 exit();
             }
-            // Créer une class Session dans Core car c'est une classe utilitaire
-            // method static setFlashMessage($message)
-            // $_SESSION['message'] = $message;
 
-            // method static getFlashMessage()
-            // Si $_SESSION['message'] existe
-            // on l'affiche
-            //  detruit la variable
+            if (empty($email)) {
+                Session::setFlashMessage('Le champs email est vide !');
+                header('Location:/car-location/inscription'); // Redirection vers le formulaire
+                exit();
+            }
+
+            if (empty($pswd)) {
+                Session::setFlashMessage('Le champs mot de passe est vide !');
+                header('Location:/car-location/inscription'); // Redirection vers le formulaire
+                exit();
+            }
+
             $user = new User();
+            // Creer une method dans User isEmailExiste($email)
+                // requete
+
             $user->saveUser($pseudo, $email, $pswd);
         }
     }
