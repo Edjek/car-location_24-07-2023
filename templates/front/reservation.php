@@ -1,5 +1,5 @@
 <?php
-include_once '../templates/includes/header.php'
+include_once '../templates/includes/front/header.php'
 ?>
 coucou
 

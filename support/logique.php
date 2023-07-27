@@ -25,7 +25,8 @@
 // Il charge le fichier autoload.php qui permet de charger les classes automatiquement.
 // Autoload::register();
 
-// Il charge la classe Database qui permet de se connecter à la base de données Database::connect();
+// Il charge la classe Database qui permet de se connecter à la base de données
+// Database::connect();
 
 // Il charge la classe Router qui permet de gérer les routes.
 // $router = new Router();
@@ -61,4 +62,4 @@
 // View
 /* ------------------ */
 
-// Les fichiers View sont situés dans le dossier templates/, il sont les fichiers qui permettent d'afficher les données (pages HTML).
+// Les fichiers View sont situés dans le dossier templates/, ce sont les fichiers qui permettent d'afficher les données (pages HTML).

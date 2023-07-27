@@ -7,6 +7,8 @@ use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
 use App\Controller\Front\ReservationController;
 use App\Controller\Front\UserController;
+use App\Controller\Admin\AdminController;
+use App\Controller\Admin\AdminCarController;
 
 class Router
 {
@@ -52,6 +54,14 @@ class Router
         $this->add_route('/connect', function () {
             $this->currentController = new UserController();
             $this->currentController->connect();
+        });
+        $this->add_route('/backoffice', function(){
+            $this->currentController = new AdminController();
+            $this->currentController->index();
+        });
+        $this->add_route('/backoffice/cars', function(){
+            $this->currentController = new AdminCarController();
+            $this->currentController->index();
         });
         // Creer une Route /backoffice = > AdminController
             // function index() => affichera la page templates/admin/admin.php
