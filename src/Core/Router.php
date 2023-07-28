@@ -62,6 +62,13 @@ class Router
             $this->currentController = new AdminCarController();
             $this->currentController->carForm($params);
         });
+        $this->add_route('/backoffice/form-car', function () {
+            $this->currentController = new AdminCarController();
+            $this->currentController->updateCar();
+        });
+        // /backoffice/form-car
+        // updateCar()
+            // le champs name n'est pas vide
     }
 
     private function add_route(string $route, callable $closure): void

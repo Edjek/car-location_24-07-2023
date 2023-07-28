@@ -4,7 +4,8 @@ require_once '../templates/includes/admin/header.php';
 
 <section class="container py-3">
     <h1>Modifier un véhicule</h1>
-    <form action="" method="post">
+    <form action="/car-location/backoffice/form-car" method="post" enctype="multipart/form-data">
+        <input type="text" value="<?= $carDetails['id']; ?> " name="id" hidden>
         <div class="mb-3">
             <label for="name" class="form-label">Modèle</label>
             <input type="text" id="name" name="name" class="form-control" value="<?= $carDetails['name']; ?>">
@@ -17,7 +18,7 @@ require_once '../templates/includes/admin/header.php';
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prix</label>
-            <input type="text" id="price" name="price" class="form-control">
+            <input type="text" id="price" name="price" class="form-control" value="<?= $carDetails['price']; ?>">
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Image</label>
