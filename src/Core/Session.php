@@ -12,7 +12,7 @@ class Session
         </div>';
     }
 
-    public static function getMessage(): void
+    public static function getFlashMessage(): void
     {
         if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
