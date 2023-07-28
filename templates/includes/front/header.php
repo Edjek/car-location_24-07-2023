@@ -21,6 +21,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+                        <?php
+                        if (isset($_SESSION['LOGGED_ADMIN'])) {
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/car-location/backoffice">Backoffice</a>
+                            </li>
+                        <?php
+                        }
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/car-location/">Accueil</a>
                         </li>
@@ -30,9 +39,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/car-location/inscription">Inscription</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/car-location/connexion">Connexion</a>
-                        </li>
+                        <?php
+                        if (isset($_SESSION['LOGGED_ID'])) {
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/car-location/deconnexion">Deconnexion</a>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/car-location/connexion">Connexion</a>
+                            </li>
+                        <?php
+                        }
+
+                        ?>
+
                     </ul>
                 </div>
             </div>
@@ -43,3 +66,4 @@
         <?php
 
         App\Core\Session::getFlashMessage();
+        var_dump($_SESSION);

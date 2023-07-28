@@ -24,7 +24,7 @@ class Session
     {
         $_SESSION['LOGGED_USERNAME'] = $user['username'];
         $_SESSION['LOGGED_ID'] = $user['id'];
-        if ($user['admin'] === true) {
+        if ($user['admin'] === 1) {
             $_SESSION['LOGGED_ADMIN'] = true;
         }
     }

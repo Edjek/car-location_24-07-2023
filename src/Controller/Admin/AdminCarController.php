@@ -32,7 +32,7 @@ class AdminCarController  extends AbstractController
 
 
             if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
-                $allowed = ['jpg' => 'image/jpg', 'jpeg' => 'image/jpeg', 'gif' => 'image/gif'];
+                $allowed = ['jpg' => 'image/jpg', 'jpeg' => 'image/jpeg', 'gif' => 'image/gif', 'png' =>'image/png'];
                 $fileName = $_FILES['img']['name'];
                 $fileType = $_FILES['img']['type'];
                 $fileSize = $_FILES['img']['size'];
@@ -53,15 +53,12 @@ class AdminCarController  extends AbstractController
                 }
 
                 if (in_array($fileType, $allowed)) {
-                    if (file_exists('./img/' . $fileName)) {
+                    if (file_exists('./img/upload/' . $fileName)) {
                         Session::setFlashMessage('Le fichier a déjà été téléchargé', 'warning');
                         header('Location: /car-location/backoffice/update-car/' . $id);
                         exit();
                     } else {
                         move_uploaded_file($_FILES['img']['tmp_name'], './img/upload/' . $_FILES['img']['name']);
-                        Session::setFlashMessage('Une voiture viens d\' être modifié !', 'success');
-                        header('Location: /car-location/backoffice/cars');
-                        exit();
                     }
                 }
             } else {
@@ -77,7 +74,7 @@ class AdminCarController  extends AbstractController
             }
             // creer un method updateCar()
             $car = new Car();
-            $car->updateCar($id, $model, $description, $price);
+            $car->updateCar($id, $model, $description, $price, $fileName);
             Session::setFlashMessage('Une voiture viens d\' être modifié !', 'success');
             header('Location: /car-location/backoffice/cars');
             exit();

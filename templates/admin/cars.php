@@ -37,7 +37,9 @@ require_once '../templates/includes/admin/header.php';
                     <td><?= $car['name']; ?></td>
                     <td><?= $car['description']; ?></td>
                     <td><?= $car['price']; ?> euros</td>
-                    <td><?= $car['image']; ?></td>
+                    <td>
+                        <img src="/car-location/public/img/upload/<?= $car['image']; ?>" alt="" class="img-thumb">
+                    </td>
                     <td class="text-center">
                         <!-- Creer la route en question -->
                         <!-- le controlleur AdminCarController -->

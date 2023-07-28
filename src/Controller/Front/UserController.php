@@ -98,4 +98,13 @@ class UserController extends AbstractController
             }
         }
     }
+
+    public function deconnexion()
+    {
+        session_destroy();
+        unset($_SESSION);
+        Session::setFlashMessage('Vous vous êtes déconnecté', 'warning');
+        header('Location: /car-location/');
+        exit();
+    }
 }

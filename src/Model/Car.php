@@ -30,14 +30,15 @@ class Car extends AbstractModel
      * 
      * @return void
      */
-    public function updateCar(int $id,string $name,string $description, float $price): void
+    public function updateCar(int $id,string $name,string $description, float $price, string $image): void
     {
-        $stmt = $this->pdo->prepare('UPDATE car SET name= :name, description= :description, price = :price WHERE id = :id');
+        $stmt = $this->pdo->prepare('UPDATE car SET name= :name, description= :description, price = :price, image= :image WHERE id = :id');
         $stmt->execute([
             ':name' => $name,
             ':description' => $description,
             ':price' => $price,
-            ':id' => $id
+            ':id' => $id,
+            ':image' => $image
         ]);
     }
 }

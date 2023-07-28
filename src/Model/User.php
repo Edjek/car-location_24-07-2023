@@ -16,7 +16,7 @@ class User extends AbstractModel
         ]);
     }
 
-    public function getUserByEmail(string $email): array
+    public function getUserByEmail(string $email)
     {
         $stmt = $this->pdo->prepare('SELECT * FROM user WHERE email= :email');
         $stmt->execute([

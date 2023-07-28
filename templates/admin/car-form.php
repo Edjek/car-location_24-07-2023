@@ -20,6 +20,7 @@ require_once '../templates/includes/admin/header.php';
             <label for="price" class="form-label">Prix</label>
             <input type="text" id="price" name="price" class="form-control" value="<?= $carDetails['price']; ?>">
         </div>
+        <img src="/car-location/public/img/upload/<?= $carDetails['image']; ?>" class="img-thumb">
         <div class="mb-3">
             <label for="img" class="form-label">Image</label>
             <input type="file" id="img" name="img" class="form-control">
